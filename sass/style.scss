@@ -1,0 +1,88 @@
+@import "parts/body";
+@import "parts/eyes";
+@import "parts/teeth";
+@import "parts/wingright";
+@import "parts/wingleft";
+
+* {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(65, 65, 160);
+}
+
+.bat-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.bat-body {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(92, 36, 36);
+    animation: body-move 3000ms linear both infinite;
+}
+
+.bat-look {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    column-gap: 30px;
+    &__eye {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: blue;
+        border: 1px solid black;
+        animation: eyes-move 3000ms ease-in-out both infinite;
+    }
+}
+
+.bat-mouth {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    column-gap: 20px;
+    &__teeth {
+        display: inline-block;
+        height: 0;
+        width: 0;
+        border-top: 15px solid yellow;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        animation: teeth-move 3000ms ease-in-out both infinite;
+       }
+} 
+
+.bat-wing {
+    position: relative;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-bottom: 60px solid rgb(58, 35, 35);
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+   }
+
+.Wleft {
+    position: relative;
+    left: -290px;
+    top: -110px;
+    transform-origin: right;
+    animation: wingleft-move 3000ms linear both infinite;
+}
+
+.Wright {
+    position: relative;
+    left: 145px;
+    top: -175px;
+    transform-origin: left;
+    animation: wingright-move 3000ms linear both infinite;
+}
